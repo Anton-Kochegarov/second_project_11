@@ -1,12 +1,12 @@
 //Подключаем галп
 const gulp = require('gulp');
 const browserSync = require('browser-sync').create();
+const less = require("gulp-less");
 
 gulp.task('html', () => {
   return gulp.src('source/*.html')
     .pipe(gulp.dest('./build'));
 });
-
 
 gulp.task('watch', () => {
   browserSync.init({
@@ -21,3 +21,5 @@ gulp.task('watch', () => {
 
 //Таск по умолчанию, Запускает del, styles, scripts и watch
 gulp.task('start', gulp.series('watch', 'html'));
+
+
